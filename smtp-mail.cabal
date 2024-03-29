@@ -11,6 +11,7 @@ maintainer:          parsonsmatt@gmail.com
 category:            Network
 build-type:          Simple
 cabal-version:       >=1.10
+tested-with:         GHC ==9.6.4
 
 extra-source-files:
     README.md
