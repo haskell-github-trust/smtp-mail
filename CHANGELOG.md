@@ -24,6 +24,8 @@ A template is provided:
 
 - [#5](https://github.com/haskell-github-trust/smtp-mail/pull/5) @spencerjanssen
     - Switch to `crypton-connection` because the `connection` package is no longer maintained
+- [#6](https://github.com/haskell-github-trust/smtp-mail/pull/6) @spencerjanssen
+    - [Change in maintainership](https://github.com/jhickner/smtp-mail/pull/41#issuecomment-2012521041)
 
 ## 0.3.0.0
 

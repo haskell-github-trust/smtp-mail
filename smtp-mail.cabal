@@ -1,12 +1,12 @@
 name:                smtp-mail
 version:             0.4.0.0
 synopsis:            Simple email sending via SMTP
-description:         This packages provides a simple interface for mail over SMTP. PLease see the README for more information.
-homepage:            http://github.com/jhickner/smtp-mail
+description:         This packages provides a simple interface for mail over SMTP. Please see the README for more information.
+homepage:            http://github.com/haskell-github-trust/smtp-mail
 license:             BSD3
 license-file:        LICENSE
 author:              Jason Hickner, Matt Parsons
-maintainer:          parsonsmatt@gmail.com
+maintainer:          spencerjanssen@gmail.com
 -- copyright:
 category:            Network
 build-type:          Simple
@@ -19,7 +19,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: git@github.com:jhickner/smtp-mail.git
+  location: git@github.com:haskell-github-trust/smtp-mail.git
 
 library
   default-language: Haskell2010
