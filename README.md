@@ -82,11 +82,9 @@ make common operations easier, and switched to ByteStrings where applicable.
 
 ### Developing
 
-`nix-integration-test/integration-test.nix` contains a integration test, which
+`nix-integration-test/` contains a integration test, which
 uses nixos qemu vm tests to start a qemu vm with a postfix and use smtp-mail to
 send mails to that postfix.
 
-Install [nix](https://nixos.org) and execute `nix-build nix-integration-test/integration-test.nix`
-to execute the test. Success is signalled by a return code of `0`.
-
-Unconveniently it can't be run via github actions or travis, as it needs kvm virtualization.
+Install [nix](https://nixos.org), enable [flakes](https://nixos.wiki/wiki/Flakes) and execute
+`nix flake check` to execute the test. Success is signalled by a return code of `0`.
