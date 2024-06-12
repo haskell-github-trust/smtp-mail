@@ -10,7 +10,7 @@ maintainer:          spencerjanssen@gmail.com
 -- copyright:
 category:            Network
 build-type:          Simple
-cabal-version:       >=1.10
+cabal-version:       2.0
 tested-with:         GHC ==9.6.4
 
 extra-source-files:
@@ -35,7 +35,7 @@ library
                , base16-bytestring
                , base64-bytestring
                , bytestring
-               , crypton-connection
+               , crypton-connection ^>= 0.3
                , filepath
                , mime-mail
                , network
