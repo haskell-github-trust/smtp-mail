@@ -77,6 +77,8 @@ import qualified Data.Text.Lazy as TL
 import qualified Data.Text.Lazy.Encoding as TL
 import Data.Text.Encoding
 
+import Data.Default.Class (def)
+
 data SMTPConnection = SMTPC !Conn.Connection ![ByteString]
 
 instance Eq SMTPConnection where
@@ -93,7 +95,7 @@ connectSMTPSTARTTLS :: HostName     -- ^ name of the server
 connectSMTPSTARTTLS hostname = connectSMTPSTARTTLS' hostname 587
 
 defaultTlsSettings :: Conn.TLSSettings
-defaultTlsSettings =  Conn.TLSSettingsSimple False False False
+defaultTlsSettings =  def
 
 -- | Connect to an SMTP server with the specified host via SMTPS on port (465).
 -- According to RFC 8314 this should be preferred over STARTTLS if the server

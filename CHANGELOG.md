@@ -20,6 +20,11 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+## 0.4.0.1
+
+- [#11](https://github.com/haskell-github-trust/smtp-mail/pull/11) @spencerjanssen
+    - Support `crypton-connection-0.4.0`
+
 ## 0.4.0.0
 
 - [#5](https://github.com/haskell-github-trust/smtp-mail/pull/5) @spencerjanssen
