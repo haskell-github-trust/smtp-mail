@@ -4,3 +4,4 @@ dist
 example.hs
 dist-newstyle
 .ghc***
+result
