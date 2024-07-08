@@ -20,6 +20,10 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+## 0.4.0.2
+
+- Switch to `crypton` because the `cryptonite` package is no longer maintained.
+
 ## 0.4.0.1
 
 - [#11](https://github.com/haskell-github-trust/smtp-mail/pull/11) @spencerjanssen
