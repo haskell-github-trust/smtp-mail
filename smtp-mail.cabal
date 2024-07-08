@@ -11,7 +11,7 @@ maintainer:          spencerjanssen@gmail.com
 category:            Network
 build-type:          Simple
 cabal-version:       2.0
-tested-with:         GHC ==9.6.4
+tested-with:         GHC ==9.6.6
 
 extra-source-files:
     README.md
