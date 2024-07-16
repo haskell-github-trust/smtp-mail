@@ -20,6 +20,10 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+## 0.5.0.0
+
+- Adds support for OAuth authentication with a new function `sendMailWithLoginOAuthSTARTTLS`.
+
 ## 0.4.0.2
 
 - Switch to `crypton` because the `cryptonite` package is no longer maintained.
