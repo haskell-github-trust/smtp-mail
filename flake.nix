@@ -27,8 +27,12 @@
           enableSubmission = true;
           enableSubmissions = true;
           tlsTrustedAuthorities = "${certs.ca.cert}";
-          sslCert = "${certs."acme.test".cert}";
-          sslKey = "${certs."acme.test".key}";
+          config = {
+            smtpd_tls_chain_files = [
+              certs."acme.test".key
+              certs."acme.test".cert
+            ];
+          };
           submissionOptions = {
             smtpd_sasl_auth_enable = "yes";
             smtpd_client_restrictions = "permit";
