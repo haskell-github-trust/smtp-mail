@@ -16,4 +16,4 @@ jobs:
           ssh-key: ${{ secrets.UPDATE_FLAKE_LOCK_SSH_KEY }}
       - uses: DeterminateSystems/nix-installer-action@90bb610b90bf290cad97484ba341453bd1cbefea # v19
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@428c2b58a4b7414dabd372acb6a03dba1084d3ab # v25
+        uses: DeterminateSystems/update-flake-lock@c5930b397a673a70ca70be06020e943aeac310a1 # v27
