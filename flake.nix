@@ -26,8 +26,8 @@
           enable = true;
           enableSubmission = true;
           enableSubmissions = true;
-          tlsTrustedAuthorities = "${certs.ca.cert}";
-          config = {
+          settings.main = {
+            tlsTrustedAuthorities = "${certs.ca.cert}";
             smtpd_tls_chain_files = [
               certs."acme.test".key
               certs."acme.test".cert
