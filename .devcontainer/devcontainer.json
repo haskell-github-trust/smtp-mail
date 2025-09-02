@@ -1,7 +1,7 @@
 // based on https://github.com/NixOS/nixpkgs/blob/6c46327d7da6419abb353e6e81dc90e93124d8b3/.devcontainer/devcontainer.json
 {
   "name": "smtp-mail",
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/nix:1": {
       // fails in the devcontainer sandbox, enable sandbox via config instead
