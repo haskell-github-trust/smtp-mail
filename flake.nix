@@ -18,7 +18,7 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux.extend self.overlays.default;
       certs =
         import "${nixpkgs}/nixos/tests/common/acme/server/snakeoil-certs.nix";
-    in pkgs.nixosTest {
+    in pkgs.testers.nixosTest {
       name = "smtp-mail";
       nodes.machine = { config, pkgs, ... }: {
         imports = [ "${nixpkgs}/nixos/tests/common/user-account.nix" ];
