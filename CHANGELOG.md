@@ -20,6 +20,10 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+## 0.5.0.1
+
+- [#63](https://github.com/haskell-github-trust/smtp-mail/pull/63) Switch to `ram` because the `memory` package is no longer maintained.
+
 ## 0.5.0.0
 
 - Adds support for OAuth authentication with a new function `sendMailWithLoginOAuthSTARTTLS`.
