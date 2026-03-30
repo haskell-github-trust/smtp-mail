@@ -2,5 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["hackage"],
+      "commitBody": "New-Hackage-Versions:\n{{#each upgrades}}  {{{depName}}}=={{{newVersion}}}\n{{/each}}"
+    }
   ]
 }
