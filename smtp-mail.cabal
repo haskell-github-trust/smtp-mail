@@ -35,14 +35,14 @@ library
                , base16-bytestring
                , base64-bytestring
                , bytestring
-               , crypton-connection ^>= 0.4.6
-               , data-default-class ^>= 0.2.0.0
+               , crypton-connection >= 0.4.6 && < 0.5
+               , data-default-class >= 0.2.0.0 && < 0.3
                , filepath
                , mime-mail
                , network
                , network-bsd
                , text
-               , crypton ^>= 1.1
-               , ram ^>= 0.21.1
+               , crypton >= 1.1 && < 2
+               , ram >= 0.21.1 && < 0.22
 
   ghc-options: -Wall -fwarn-tabs
