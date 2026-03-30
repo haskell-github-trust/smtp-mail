@@ -7,6 +7,11 @@
     {
       "matchDatasources": ["hackage"],
       "commitBody": "New-Hackage-Versions:\n{{#each upgrades}}  {{{depName}}}=={{{newVersion}}}\n{{/each}}"
+    },
+    {
+      "matchDatasources": ["!hackage"],
+      "internalChecksFilter": "strict",
+      "minimumReleaseAge": "7 days"
     }
   ]
 }
