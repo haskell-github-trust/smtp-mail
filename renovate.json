@@ -6,6 +6,10 @@
   "nix": {
     "enabled": true
   },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "packageRules": [
     {
       "matchDatasources": ["hackage"],
@@ -14,7 +18,8 @@
     {
       "matchDatasources": ["!hackage"],
       "internalChecksFilter": "strict",
-      "minimumReleaseAge": "7 days"
+      "minimumReleaseAge": "7 days",
+      "automerge": true
     }
   ]
 }
