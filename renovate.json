@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices"
+  ],
+  "nix": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["hackage"],
+      "commitBody": "New-Hackage-Versions:\n{{#each upgrades}}  {{{depName}}}=={{{newVersion}}}\n{{/each}}"
+    },
+    {
+      "matchDatasources": ["!hackage"],
+      "internalChecksFilter": "strict",
+      "minimumReleaseAge": "7 days"
+    }
+  ]
+}
