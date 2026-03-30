@@ -3,6 +3,9 @@
   "extends": [
     "config:best-practices"
   ],
+  "nix": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "matchDatasources": ["hackage"],
