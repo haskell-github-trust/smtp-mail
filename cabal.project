@@ -1,1 +1,3 @@
-packages: .
+packages:
+    .
+    nix-integration-test/integration-test
