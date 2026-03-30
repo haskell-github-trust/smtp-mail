@@ -43,6 +43,14 @@ jobs:
         with:
           path: ${{ steps.cabal-store.outputs.path }}
           key: ${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('**/*.cabal') }}
+      - name: Extract New-Hackage-Versions git trailer from Renovate
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          for constraint in $(git log "--format=%(trailers:key=New-Hackage-Versions,valueonly=true)" ${{ github.event.pull_request.head.sha }} -1)
+          do
+            echo "constraints: $constraint" >> cabal.project.local
+            echo "::notice title=Dependency Constraint Applied::$constraint"
+          done
       - name: Build dependencies
         run: cabal build all --only-dependencies
       - name: Save cache
