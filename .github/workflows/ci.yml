@@ -39,7 +39,7 @@ jobs:
         id: cabal-store
         run: echo "path=$(cabal path --store-dir)" >> "$GITHUB_OUTPUT"
       - name: Restore cache
-        uses: actions/cache/restore@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ${{ steps.cabal-store.outputs.path }}
           key: ${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('**/*.cabal') }}
@@ -55,7 +55,7 @@ jobs:
       - name: Build dependencies
         run: cabal build all --only-dependencies
       - name: Save cache
-        uses: actions/cache/save@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ${{ steps.cabal-store.outputs.path }}
           key: ${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('**/*.cabal') }}
