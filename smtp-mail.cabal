@@ -42,7 +42,7 @@ library
                , network
                , network-bsd
                , text
-               , crypton >= 1.1 && < 2
+               , crypton >=1.1 && <2.2
                , ram >=0.21.1 && <0.23
 
   ghc-options: -Wall -fwarn-tabs
