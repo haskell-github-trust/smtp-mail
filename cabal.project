@@ -1,3 +1,9 @@
 packages:
     .
     nix-integration-test/integration-test
+
+-- temporary workaround for crypton-connection incompatibility with
+-- crypton 2.2.0
+allow-newer:
+    crypton-connection-0.4.6:crypton-x509-system,
+    crypton-connection-0.4.6:crypton-x509-store
