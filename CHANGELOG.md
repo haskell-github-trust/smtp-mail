@@ -20,6 +20,11 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+- [#119](https://github.com/haskell-github-trust/smtp-mail/pull/119) @ysangkok
+  - Use `getHostName` from `network` instead of `network-bsd`, fixing the build with `network >= 3.2.10`
+  - Drop the `network-bsd` dependency and require `network >= 3.2.10`
+  - Patch change
+
 ## 0.5.0.1
 
 - [#63](https://github.com/haskell-github-trust/smtp-mail/pull/63) Switch to `ram` because the `memory` package is no longer maintained.

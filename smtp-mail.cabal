@@ -39,8 +39,7 @@ library
                , data-default-class >= 0.2.0.0 && < 0.3
                , filepath
                , mime-mail
-               , network
-               , network-bsd
+               , network >= 3.2.10
                , text
                , crypton >=1.1 && <2.3
                , ram >=0.21.1 && <0.23

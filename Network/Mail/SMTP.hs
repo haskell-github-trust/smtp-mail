@@ -66,7 +66,6 @@ import Control.Monad (unless)
 import Data.Char (isDigit)
 
 import Network.Socket
-import Network.BSD (getHostName)
 import Network.Mail.Mime hiding (filePart, htmlPart, simpleMail)
 import qualified Network.Connection as Conn
 
