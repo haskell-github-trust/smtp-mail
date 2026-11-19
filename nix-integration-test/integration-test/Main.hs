@@ -2,24 +2,27 @@
 module Main where
 
 import Network.Mail.SMTP hiding (simpleMail)
-import Network.Mail.Mime (simpleMail)
+import Network.Mail.Mime (simpleMail, Mail(..))
 import System.Environment as Env
 import Test.Hspec
 import Test.Hspec.Expectations
 
 from       = Address Nothing "integration-test-smtp-mail@acme.test"
 to         = Address (Just "alice") "alice@acme.test"
-subject    = "Test Mail"
+subject    = "Test"
 body       = "Test Mail Body Part"
 html       = "<h1>This Test succeeded!</h1>"
 
-createMail = simpleMail to from subject body html []
+createMail label = simpleMail to from (subject <> " " <> label) body html []
 
 host = "acme.test"
 
-doPlainSmtp = createMail >>= sendMail host
-doTlsSmtp = createMail >>= sendMailTLS host
-doSTARTTLS = createMail >>= sendMailSTARTTLS host
+doPlainSmtp = createMail "Plain" >>= sendMail host
+doTlsSmtp = createMail "TLS" >>= sendMailTLS host
+doSTARTTLS = createMail "STARTTLS" >>= sendMailSTARTTLS host
+doBcc = do
+  mail <- createMail "Bcc"
+  sendMail host mail { mailBcc = [Address (Just "bob") "bob@acme.test"] }
 
 main :: IO ()
 main = hspec $ do
@@ -30,3 +33,5 @@ main = hspec $ do
       doTlsSmtp `shouldReturn` ()
     it "using STARTTLS" $ do
       doSTARTTLS `shouldReturn` ()
+    it "using Bcc" $ do
+      doBcc `shouldReturn` ()

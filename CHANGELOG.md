@@ -20,6 +20,15 @@ A template is provided:
   - Indicate if changes are major, minor, or patch changes.
 ```
 
+## 0.5.1.0
+
+- [#43](https://github.com/haskell-github-trust/smtp-mail/pull/43) @spencerjanssen
+  - The `Bcc` header is stripped from the message before sending it to the
+    SMTP server. Previously, every recipient could see the Bcc addresses
+    unless the server happened to strip the header itself.
+
+## 0.5.0.2
+
 - [#119](https://github.com/haskell-github-trust/smtp-mail/pull/119) @ysangkok
   - Use `getHostName` from `network` instead of `network-bsd`, fixing the build with `network >= 3.2.10`
   - Drop the `network-bsd` dependency and require `network >= 3.2.10`

@@ -38,6 +38,13 @@
             enableSubmissions = true;
             settings.main = {
               tlsTrustedAuthorities = "${certs.ca.cert}";
+              home_mailbox = "Maildir/";
+              mydestination = "localhost, acme.test";
+              local_recipient_maps = "";
+              myhostname = "acme.test";
+              # Postfix strips Bcc headers by default, which would mask
+              # smtp-mail leaking them. Keep the rest of the default list.
+              message_drop_headers = "content-length, return-path";
               smtpd_tls_chain_files = [
                 certs."acme.test".key
                 certs."acme.test".cert
@@ -69,6 +76,13 @@
         testScript = ''
           machine.wait_for_unit("postfix.service")
           machine.succeed("integration-test")
+          machine.succeed("grep -l '^Subject: Test Plain$' /home/alice/Maildir/new/*")
+          machine.succeed("grep -l '^Subject: Test TLS$' /home/alice/Maildir/new/*")
+          machine.succeed("grep -l '^Subject: Test STARTTLS$' /home/alice/Maildir/new/*")
+          machine.succeed("grep -l '^Subject: Test Bcc$' /home/alice/Maildir/new/*")
+          machine.succeed("grep -l '^Subject: Test Bcc$' /home/bob/Maildir/new/*")
+          machine.fail("grep -il '^bcc:' /home/alice/Maildir/new/* /home/bob/Maildir/new/*")
+          machine.fail("grep -l 'bob@acme.test' /home/alice/Maildir/new/*")
         '';
       };
     };
